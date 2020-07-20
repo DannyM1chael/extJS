@@ -3,12 +3,6 @@ Ext.define('MyApp.view.main.MainController', {
 
   alias: 'controller.main',
 
-  onItemSelected: function () {
-    Ext.create({
-      xtype: 'card',
-    });
-  },
-
   onConfirm: function (choice) {
     if (choice === 'yes') {
       //

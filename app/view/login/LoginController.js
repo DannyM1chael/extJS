@@ -15,7 +15,7 @@ Ext.define('MyApp.view.login.LoginController', {
         xtype: 'app-main',
       });
     } else {
-      Ext.get('displayfield-1013-inputEl')
+      Ext.select('.x-form-display-field-default')
         .setStyle({
           color: 'red',
         })

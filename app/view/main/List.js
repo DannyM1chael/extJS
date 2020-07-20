@@ -17,8 +17,4 @@ Ext.define('MyApp.view.main.List', {
     { text: 'Цена', dataIndex: 'price', flex: 1 },
     { text: 'Кол-во', dataIndex: 'qty', flex: 1 },
   ],
-
-  listeners: {
-    select: 'onItemSelected',
-  },
 });
