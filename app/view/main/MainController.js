@@ -3,8 +3,10 @@ Ext.define('MyApp.view.main.MainController', {
 
   alias: 'controller.main',
 
-  onItemSelected: function (sender, record) {
-    Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
+  onItemSelected: function () {
+    Ext.create({
+      xtype: 'card',
+    });
   },
 
   onConfirm: function (choice) {
