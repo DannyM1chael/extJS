@@ -71,6 +71,7 @@ Ext.define('MyApp.view.main.Main', {
   items: [
     {
       title: 'Товары',
+      id: 'tabs',
       items: [
         {
           xtype: 'mainlist',

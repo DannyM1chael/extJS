@@ -17,4 +17,29 @@ Ext.define('MyApp.view.main.List', {
     { text: 'Цена', dataIndex: 'price', flex: 1 },
     { text: 'Кол-во', dataIndex: 'qty', flex: 1 },
   ],
+
+  tbar: [
+    {
+      fieldLabel: 'ID',
+      xtype: 'textfield',
+      emptyText: 'Введите фильтр...',
+      margin: '10',
+    },
+    {
+      fieldLabel: 'Описание',
+      xtype: 'textfield',
+      emptyText: 'Введите фильтр...',
+      margin: '10',
+      listeners: {
+        change: function (field, value) {
+          // filterGrid('description', value);
+          console.log('filter');
+        },
+      },
+    },
+  ],
+
+  listeners: {
+    select: 'onItemSelected',
+  },
 });

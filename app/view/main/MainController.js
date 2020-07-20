@@ -3,6 +3,21 @@ Ext.define('MyApp.view.main.MainController', {
 
   alias: 'controller.main',
 
+  onItemSelected: function () {
+    Ext.create({
+      xtype: 'model.card',
+      autoShow: true,
+    });
+  },
+
+  onSaveClick: function () {
+    console.log('Сохранено');
+  },
+
+  onCancelClick: function () {
+    console.log('Отменено');
+  },
+
   onConfirm: function (choice) {
     if (choice === 'yes') {
       //
@@ -20,6 +35,13 @@ Ext.define('MyApp.view.main.MainController', {
   },
 
   onMouseDown: function () {
-    alert('click');
+    var tabs = Ext.getCmp('tabs');
+    tabs.add({
+      items: [
+        {
+          xtype: 'mainlist',
+        },
+      ],
+    });
   },
 });

@@ -1,17 +1,57 @@
 Ext.define('MyApp.view.card.Card', {
-  extend: 'Ext.window.Window',
-  xtype: 'card',
+  extend: 'Ext.form.Panel',
+  xtype: 'view.card',
 
-  requires: ['MyApp.view.card.CardController', 'Ext.form.Panel'],
+  requires: ['MyApp.store.Items'],
 
-  controller: 'card',
+  store: {
+    type: 'items',
+  },
 
-  title: 'Карточка товара',
-  closable: false,
-  autoShow: true,
+  fieldDefaults: {
+    labelAlign: 'left',
+    margin: '10',
+  },
 
   items: {
     xtype: 'form',
-    reference: 'form',
+    items: [
+      {
+        xtype: 'textfield',
+        name: 'id',
+        fieldLabel: 'ID',
+      },
+      {
+        xtype: 'textfield',
+        name: 'description',
+        fieldLabel: 'Описание',
+      },
+      {
+        xtype: 'textfield',
+        name: 'price',
+        fieldLabel: 'Цена',
+      },
+      {
+        xtype: 'textfield',
+        name: 'qty',
+        fieldLabel: 'Кол-во',
+      },
+    ],
+    buttons: [
+      {
+        text: 'Сохранить',
+        formBind: true,
+        listeners: {
+          click: 'onSaveClick',
+        },
+      },
+      {
+        text: 'Отмена',
+        formBind: true,
+        listeners: {
+          click: 'onCancelClick',
+        },
+      },
+    ],
   },
 });
