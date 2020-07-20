@@ -18,6 +18,7 @@ Ext.define('MyApp.view.login.Login', {
         xtype: 'textfield',
         name: 'username',
         fieldLabel: 'Логин',
+        reference: 'username',
         allowBlank: false,
       },
       {
@@ -25,6 +26,7 @@ Ext.define('MyApp.view.login.Login', {
         name: 'password',
         inputType: 'password',
         fieldLabel: 'Пароль',
+        reference: 'password',
         allowBlank: false,
       },
       {

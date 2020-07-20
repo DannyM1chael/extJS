@@ -3,10 +3,10 @@ bootstrap.css
 bootstrap.js
 bootstrap.json
 bootstrap.jsonp
-build/
+build
 classic.json
 classic.jsonp
-ext/
+ext
 modern.json
 modern.jsonp
 resources/sass/.sass-cache/

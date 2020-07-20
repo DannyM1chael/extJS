@@ -3,15 +3,23 @@ Ext.define('MyApp.view.login.LoginController', {
   alias: 'controller.login',
 
   onLoginClick: function () {
-    // This would be the ideal location to verify the user's credentials via
-    // a server-side lookup. We'll just move forward for the sake of this example.
+    var username = this.lookupReference('username').getValue();
+    var password = this.lookupReference('password').getValue();
 
-    localStorage.setItem('MyAppLoggedIn', true);
+    if (username === 'admin' && password === 'padmin') {
+      localStorage.setItem('MyAppLoggedIn', true);
 
-    this.getView().destroy();
+      this.getView().destroy();
 
-    Ext.create({
-      xtype: 'app-main',
-    });
+      Ext.create({
+        xtype: 'app-main',
+      });
+    } else {
+      Ext.get('displayfield-1013-inputEl')
+        .setStyle({
+          color: 'red',
+        })
+        .update('Проверьте логин и пароль');
+    }
   },
 });
